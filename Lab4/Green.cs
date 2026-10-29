@@ -8,7 +8,7 @@ namespace Lab4
         {
             double sumpos = 0;
             int k = 0;
-            int n = sizeof(array);
+            int n = array.Length;
             for (int i = 0; i < n; i++)
             {
                 if (array[i] > 0)
@@ -32,7 +32,7 @@ namespace Lab4
         public int Task2(int[] array)
         {
             int sum = 0;
-            int n = sizeof(array);
+            int n = array.Length;
             for (int i = 0; i < n; i++)
             {
                 if (array[i] < 0)
@@ -48,39 +48,27 @@ namespace Lab4
 
         public int[] Task3(int[] array)
         {
-            int i = 0;
+            int n = array.Length;
             int maxx = -999;
             int maxdex = 0;
-            while (true)
+            for (int i = 0; i < n; i++)
             {
                 if (array[i] > maxx)
                 {
                     maxx = array[i];
                     maxdex = i;
                 }
-                if (array[i] == array[-1])
-                {
-                    break;
-                }
-                i++;
             }
-            i = 0;
             int minn = 999;
             int mindex = 0;
-            while (true)
+            for (int i = 0; i < n; i++)
             {
                 if (array[i] < minn)
                 {
                     minn = array[i];
                     mindex = i;
                 }
-                if (array[i] == array[-1])
-                {
-                    break;
-                }
-                i++;
             }
-            i = 0;
             int k = 0;
             if (maxdex > mindex)
             {
@@ -130,9 +118,9 @@ namespace Lab4
 
         public void Task4(int[] array)
         {
-            int i = 0;
+            int n = array.Length;
             int maxx = -999;
-            while (true)
+            for (int i = 0; i < n; i++)
             {
                 if (array[i] > maxx)
                 {
@@ -144,23 +132,16 @@ namespace Lab4
                 }
                 i++;
             }
-            i = 0;
             int minmin = 0;
-            while (true)
+            for (int i = 0; i < n; i++)
             {
                 if (array[i] < 0)
                 {
                     minmin = array[i];
                     break;
                 }
-                if (array[i] == array[-1])
-                {
-                    break;
-                }
-                i++;
             }
-            i = 0;
-            while (true)
+            for (int i = 0; i < n; i++)
             {
                 if (array[i] == maxx)
                 {
@@ -170,11 +151,6 @@ namespace Lab4
                 {
                     array[i] = maxx;
                 }
-                if (array[i] == array[-1])
-                {
-                    break;
-                }
-                i++;
             }
         }
 
@@ -182,37 +158,26 @@ namespace Lab4
 
         public int[] Task5(int[] array)
         {
-            int i = 0;
+            int n = array.Length;
             int k = 0;
             int maxx = -999;
-            while (true)
+            for (int i = 0; i < n; i++)
             {
                 if (array[i] > maxx)
                 {
                     maxx = array[i];
                     k++;
                 }
-                if (array[i] == array[-1])
-                {
-                    break;
-                }
-                i++;
             }
             int[] answer = new int[k];
-            i = 0;
             int ii = 0;
-            while (true)
+            for (int i = 0; i < n; i++)
             {
                 if (array[i] == maxx)
                 {
                     answer[ii] = i;
                     ii++;
                 }
-                if (array[i] == array[-1])
-                {
-                    break;
-                }
-                i++;
             }
             return answer;
         }
@@ -221,32 +186,21 @@ namespace Lab4
 
         public void Task6(int[] array)
         {
-            int i = 0;
+            int n = array.Length;
             int maxx = -999;
-            while (true)
+            for (int i = 0; i < n; i++)
             {
                 if (array[i] > maxx)
                 {
                     maxx = array[i];
                 }
-                if (array[i] == array[-1])
-                {
-                    break;
-                }
-                i++;
             }
-            i = 0;
-            while (true)
+            for (int i = 0; i < n; i++)
             {
                 if (array[i] == maxx)
                 {
                     array[i] += i;
                 }
-                if (array[i] == array[-1])
-                {
-                    break;
-                }
-                i++;
             }
         }
 
@@ -254,22 +208,16 @@ namespace Lab4
 
         public void Task7(int[] array)
         {
-            int i = 0;
+            int n = array.Length;
             int maxx = -999;
-            while (true)
+            for (int i = 0; i < n; i++)
             {
                 if (array[i] > maxx)
                 {
                     maxx = array[i];
                 }
-                if (array[i] == array[-1])
-                {
-                    break;
-                }
-                i++;
             }
-            i = 0;
-            while (true)
+            for (int i = 0; i < n; i++)
             {
                 int sum = 0;
                 if (array[i] == maxx)
@@ -280,11 +228,6 @@ namespace Lab4
                     }
                     array[i] = sum;
                 }
-                if (array[i] == array[-1])
-                {
-                    break;
-                }
-                i++; ;
             }
         }
 
@@ -293,10 +236,10 @@ namespace Lab4
         public int Task8(int[] array)
         {
             int length = 0;
-            int i = 1;
+            int n = array.Length;
             int k = 1;
             int kk = 0;
-            while (true)
+            for (int i = 1; i < n; i++)
             {
                 if (array[i] < array[i-1])
                 {
@@ -310,10 +253,6 @@ namespace Lab4
                     }
                     k = 1;
                 }
-                if (array[i] == array[-1])
-                {
-                    break;
-                }
                 i++;
             }
             length = kk;
@@ -324,15 +263,7 @@ namespace Lab4
 
         public void Task9(int[] array)
         {
-            int n = 0;
-            while (true)
-            {
-                if (array[n] == array[-1])
-                {
-                    break;
-                }
-                n++;
-            }
+            int n = array.Length;
             for (int i = 0; i < n-2; i += 2)
             {
                 for (int j = 0; j < n-2; j += 2)
@@ -351,19 +282,11 @@ namespace Lab4
 
         public int[] Task10(int[] array)
         {
-            int i = 0;
+            int n = array.Length;
             int[] arrtwo = array;
-            while (true)
+            for (int j = 0; j < n; j++)
             {
-                if (array[i] == array[-1])
-                {
-                    break;
-                }
-                i++;
-            }
-            for (int j = 0; j < i; j++)
-            {
-                for (int l = 0; l < i-j-1; l++)
+                for (int l = 0; l < n-j-1; l++)
                 {
                     if (array[l] > array[l + 1]){
                         int temp = array[l];
@@ -373,7 +296,7 @@ namespace Lab4
                 }
             }
             int ii = 0;
-            for (int j = 0; j < i-1; j++)
+            for (int j = 0; j < n-1; j++)
             {
                 int flag = 0;
                 if (array[j] == array[j + 1])
@@ -387,9 +310,9 @@ namespace Lab4
                 flag = 0;
             }
             int[] cleared = new int[ii];
-            for (int j = 0; j < i; j++)
+            for (int j = 0; j < n; j++)
             {
-                for (int l = j; l < i; l++)
+                for (int l = j; l < n; l++)
                 {
                     if (arrtwo[j] == arrtwo[l])
                     {
@@ -398,7 +321,7 @@ namespace Lab4
                 }
             }
             ii = 0;
-            for (int j = 0; j < i; j++)
+            for (int j = 0; j < n; j++)
             {
                 if (arrtwo[j] != 9999999)
                 {
@@ -446,10 +369,10 @@ namespace Lab4
         public int Task12(int[] dices)
         {
             int wins = 0;
-            int i = 0;
+            int n = dices.Length;
             int ii = 0;
             int penalty = 0;
-            while (true)
+            for (int i = 0; i < n; i++)
             {
                 dices[i] -= penalty;
                 if (penalty > 5)
