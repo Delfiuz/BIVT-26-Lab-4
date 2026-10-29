@@ -1,8 +1,4 @@
 using System;
-using System.Data;
-using System.Diagnostics.CodeAnalysis;
-using System.Runtime.InteropServices;
-using System.Security.Principal;
 
 namespace Lab4
 {
@@ -10,34 +6,24 @@ namespace Lab4
     {
         public void Task1(double[] array)
         {
-            int i = 0;
             double sumpos = 0;
             int k = 0;
-            while (true)
+            int n = sizeof(array);
+            for (int i = 0; i < n; i++)
             {
                 if (array[i] > 0)
                 {
                     sumpos += array[i];
                     k++;
                 }
-                if (array[i] == array[-1])
-                {
-                    break;
-                }
-                i++;
             }
-            i = 0;
-            while (true)
+            sumpos /= k;
+            for (int i = 0; i < n; i++)
             {
                 if (array[i] > 0)
                 {
-                    array[i] = sumpos / k;
+                    array[i] = sumpos;
                 }
-                if (array[i] == array[-1])
-                {
-                    break;
-                }
-                i++;
             }
         }
 
@@ -46,19 +32,14 @@ namespace Lab4
         public int Task2(int[] array)
         {
             int sum = 0;
-            int i = 0;
-            while (true)
+            int n = sizeof(array);
+            for (int i = 0; i < n; i++)
             {
                 if (array[i] < 0)
                 {
                     break;
                 }
-                sum += array[i];
-                if (array[i] == array[-1])
-                {
-                    break;
-                }
-                i++;
+                sum += array[i] * array[i];
             }
             return sum;
         }
