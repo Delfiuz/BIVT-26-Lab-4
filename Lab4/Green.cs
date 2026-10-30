@@ -358,22 +358,19 @@ namespace Lab4
             }
             else
             {
+                double[] B = new double[k];
+                int ii = 0;
+                for (int i = 0; i < n; i++)
+                {
+                    if (A[i] > summ / n1)
+                    {
+                        B[ii] = A[i];
+                        ii++;
+                    }
+                }
+                return B;
 
             }
-                if (a != b)
-                {
-                    double[] B = new double[k];
-                    int ii = 0;
-                    for (int i = 0; i < n; i++)
-                    {
-                        if (A[i] > summ / n1)
-                        {
-                            B[ii] = A[i];
-                            ii++;
-                        }
-                    }
-                    return B;
-                }
         }
 
 
