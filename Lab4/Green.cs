@@ -43,6 +43,10 @@ namespace Lab4
                 }
                 sum += array[i] * array[i];
             }
+            if (array[0] < 0)
+            {
+                sum = 0;
+            }
             return sum;
         }
 
@@ -351,26 +355,17 @@ namespace Lab4
                     k++;
                 }
             }
-            if (a == b)
+            double[] B = new double[k];
+            int ii = 0;
+            for (int i = 0; i < n; i++)
             {
-                double[] B = null;
-                return B;
-            }
-            else
-            {
-                double[] B = new double[k];
-                int ii = 0;
-                for (int i = 0; i < n; i++)
+                if (A[i] > summ / n1)
                 {
-                    if (A[i] > summ / n1)
-                    {
-                        B[ii] = A[i];
-                        ii++;
-                    }
+                    B[ii] = A[i];
+                    ii++;
                 }
-                return B;
-
             }
+            return B;
         }
 
 
