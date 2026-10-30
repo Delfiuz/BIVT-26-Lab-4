@@ -213,7 +213,7 @@ namespace Lab4
             {
                 if (array[i] == maxx)
                 {
-                    array[i] += i;
+                    array[i] += i+1;
                 }
             }
         }
