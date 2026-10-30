@@ -143,9 +143,12 @@ namespace Lab4
                 {
                     array[i] = minmin;
                 }
-                if (array[i] == minmin)
+                else
                 {
-                    array[i] = maxx;
+                    if (array[i] == minmin)
+                    {
+                        array[i] = maxx;
+                    }
                 }
             }
         }
