@@ -352,6 +352,10 @@ namespace Lab4
                 }
             }
             double[] B = new double[k];
+            if (a == b)
+            {
+                return B = null;
+            }
             int ii = 0;
             for (int i = 0; i < n; i++)
             {
@@ -360,10 +364,6 @@ namespace Lab4
                     B[ii] = A[i];
                     ii++;
                 }
-            }
-            if (a == b)
-            {
-                return B = null;
             }
             return B;
         }
