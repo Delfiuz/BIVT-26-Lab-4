@@ -127,7 +127,7 @@ namespace Lab4
                 {
                     maxx = array[i];
                 }
-                if (array[i] == array[-1])
+                if (array[i] == array[n])
                 {
                     break;
                 }
