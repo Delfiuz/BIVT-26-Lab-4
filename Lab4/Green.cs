@@ -34,13 +34,14 @@ namespace Lab4
         {
             int sum = 0;
             int n = array.Length;
+            int flag = 0;
             for (int i = 0; i < n; i++)
             {
                 if (array[i] < 0)
                 {
-                    break;
+                    flag = 1;
                 }
-                else
+                if (flag == 0)
                 {
                     sum += array[i] * array[i];
                 }
