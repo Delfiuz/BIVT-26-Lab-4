@@ -1,4 +1,5 @@
 using System;
+using Microsoft.Win32.SafeHandles;
 
 namespace Lab4
 {
@@ -163,9 +164,15 @@ namespace Lab4
             int maxx = -999;
             for (int i = 0; i < n; i++)
             {
-                if (array[i] > maxx)
+                if (array[i] >= maxx)
                 {
                     maxx = array[i];
+                }
+            }
+            for(int i = 0; i < n; i++)
+            {
+                if (array[i] == maxx)
+                {
                     k++;
                 }
             }
@@ -190,7 +197,7 @@ namespace Lab4
             int maxx = -999;
             for (int i = 0; i < n; i++)
             {
-                if (array[i] > maxx)
+                if (array[i] >= maxx)
                 {
                     maxx = array[i];
                 }
@@ -217,17 +224,14 @@ namespace Lab4
                     maxx = array[i];
                 }
             }
+            int sum = 0;
             for (int i = 0; i < n; i++)
             {
-                int sum = 0;
                 if (array[i] == maxx)
                 {
-                    for (int j = 0; j < i-1; j++)
-                    {
-                        sum += array[i]; 
-                    }
                     array[i] = sum;
                 }
+                sum += array[i];
             }
         }
 
@@ -239,9 +243,9 @@ namespace Lab4
             int n = array.Length;
             int k = 1;
             int kk = 0;
-            for (int i = 1; i < n; i++)
+            for (int i = 0; i < n-1; i++)
             {
-                if (array[i] < array[i-1])
+                if (array[i] > array[i+1])
                 {
                     k++;
                 }
@@ -263,10 +267,19 @@ namespace Lab4
 
         public void Task9(int[] array)
         {
+            int minus = 0;
             int n = array.Length;
-            for (int i = 0; i < n-2; i += 2)
+            if (n % 2 == 0)
             {
-                for (int j = 0; j < n-2; j += 2)
+                minus = 2;
+            }
+            else
+            {
+                minus = 1;
+            }
+            for (int i = 0; i < n-minus; i += 2)
+            {
+                for (int j = 0; j < n-minus; j += 2)
                 {
                     if (array[j] > array[j + 2])
                     {
@@ -312,7 +325,7 @@ namespace Lab4
             int[] cleared = new int[ii];
             for (int j = 0; j < n; j++)
             {
-                for (int l = j; l < n; l++)
+                for (int l = j+1; l < n; l++)
                 {
                     if (arrtwo[j] == arrtwo[l])
                     {
@@ -339,14 +352,19 @@ namespace Lab4
             double[] A = new double[n];
             double summ = 0;
             int k = 0;
+            int n1 = 0;
             for (int i = 0; i < n; i++)
             {
                 A[i] = a + (b - a) / n * i;
-                summ += a + (b - a) / n * i;
+                if (A[i] > 0)
+                {
+                    summ += a + (b - a) / n * i;
+                    n1++;
+                }
             }
             for (int i = 0; i < n; i++)
             {
-                if (A[i] > summ / n)
+                if (A[i] > summ / n1)
                 {
                     k++;
                 }
@@ -355,7 +373,7 @@ namespace Lab4
             int ii = 0;
             for (int i = 0; i < n; i++)
             {
-                if (A[i] > summ / n)
+                if (A[i] > summ / n1)
                 {
                     B[ii] = A[i];
                     ii++;
@@ -375,24 +393,18 @@ namespace Lab4
             for (int i = 0; i < n; i++)
             {
                 dices[i] -= penalty;
-                if (penalty > 5)
-                {
-                    penalty = 5;
-                }
-                dices[i] -= penalty;
-                if (dices[i]+penalty == 6)
+                if ((dices[i] + penalty) == 6)
                 {
                     penalty++;
                 }
-                if (dices[i] > 6 - ii)
+                if (dices[i] < 1)
+                {
+                    dices[i] = 1;
+                }
+                if (dices[i] > (6 - ii))
                 {
                     wins++;
                 }
-                if (dices[i] == dices[-1])
-                {
-                    break;
-                }
-                i++;
                 if (ii < 5)
                 {
                     ii++;
