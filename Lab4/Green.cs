@@ -33,7 +33,21 @@ namespace Lab4
 
         public int Task2(int[] array)
         {
-            return 0;
+            int sum = 0;
+            int n = array.Length;
+            if (array[0] < 0)
+            {
+                return 0;
+            }
+            for (int i = 0; i < n; i++)
+            {
+                if (array[i] < 0)
+                {
+                    return sum;
+                }
+                sum += array[i] * array[i];
+            }
+            return sum;
         }
 
 
@@ -340,6 +354,10 @@ namespace Lab4
                 {
                     k++;
                 }
+            }
+            if (a == b)
+            {
+                return null;
             }
             double[] B = new double[k];
             int ii = 0;
