@@ -39,14 +39,13 @@ namespace Lab4
             {
                 if (array[i] < 0)
                 {
-                    flag = 1;
+                    return sum;
                 }
                 if (flag == 0)
                 {
                     sum += array[i] * array[i];
                 }
             }
-            return sum;
         }
 
 
