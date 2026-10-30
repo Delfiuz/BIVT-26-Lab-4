@@ -40,7 +40,10 @@ namespace Lab4
                 {
                     break;
                 }
-                sum += array[i] * array[i];
+                else
+                {
+                    sum += array[i] * array[i];
+                }
             }
             return sum;
         }
