@@ -322,6 +322,7 @@ namespace Lab4
                 }
                 flag = 0;
             }
+            ii++;
             int[] cleared = new int[ii];
             for (int j = 0; j < n; j++)
             {
