@@ -127,11 +127,6 @@ namespace Lab4
                 {
                     maxx = array[i];
                 }
-                if (array[i] == array[n-1])
-                {
-                    break;
-                }
-                i++;
             }
             int minmin = 0;
             for (int i = 0; i < n; i++)
