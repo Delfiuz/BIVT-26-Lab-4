@@ -337,10 +337,10 @@ namespace Lab4
             int n1 = 0;
             for (int i = 0; i < n; i++)
             {
-                A[i] = a + (b - a) / n * i;
+                A[i] = a + (b - a) / (n-1) * i;
                 if (A[i] > 0)
                 {
-                    summ += a + (b - a) / n * i;
+                    summ += a + (b - a) / (n-1) * i;
                     n1++;
                 }
             }
