@@ -361,6 +361,10 @@ namespace Lab4
                     ii++;
                 }
             }
+            if (a == b)
+            {
+                return B = null;
+            }
             return B;
         }
 
