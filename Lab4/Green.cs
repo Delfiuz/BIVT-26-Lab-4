@@ -137,17 +137,21 @@ namespace Lab4
                     break;
                 }
             }
+            int flag1 = 0;
+            int flag2 = 0;
             for (int i = 0; i < n; i++)
             {
-                if (array[i] == maxx)
+                if (array[i] == maxx && flag1 == 0)
                 {
                     array[i] = minmin;
+                    flag1 = 1;
                 }
                 else
                 {
-                    if (array[i] == minmin)
+                    if (array[i] == minmin && flag2 == 0)
                     {
                         array[i] = maxx;
+                        flag2 = 1;
                     }
                 }
             }
