@@ -46,6 +46,7 @@ namespace Lab4
                     sum += array[i] * array[i];
                 }
             }
+            return sum;
         }
 
 
