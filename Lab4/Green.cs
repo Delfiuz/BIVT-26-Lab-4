@@ -35,6 +35,10 @@ namespace Lab4
         {
             int sum = 0;
             int n = array.Length;
+            if (array[0] < 0)
+            {
+                return 0;
+            }
             for (int i = 0; i < n; i++)
             {
                 if (array[i] < 0)
@@ -42,10 +46,6 @@ namespace Lab4
                     return sum;
                 }
                 sum += array[i] * array[i];
-            }
-            if (array[0] < 0)
-            {
-                sum = 0;
             }
             return sum;
         }
