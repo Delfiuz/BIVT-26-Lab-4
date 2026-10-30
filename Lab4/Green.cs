@@ -209,11 +209,13 @@ namespace Lab4
                     maxx = array[i];
                 }
             }
+            int ii = 1;
             for (int i = 0; i < n; i++)
             {
                 if (array[i] == maxx)
                 {
-                    array[i] += i+1;
+                    array[i] += ii;
+                    ii++;
                 }
             }
         }
