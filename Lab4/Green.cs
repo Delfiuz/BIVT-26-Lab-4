@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.ExceptionServices;
 using Microsoft.Win32.SafeHandles;
 
 namespace Lab4
@@ -298,51 +299,29 @@ namespace Lab4
         public int[] Task10(int[] array)
         {
             int n = array.Length;
-            int[] arrtwo = array;
-            for (int j = 0; j < n; j++)
+            int ii = n;
+            for (int i = 0; i < n; i++)
             {
-                for (int l = 0; l < n-j-1; l++)
+                if (array[i] != 9999)
                 {
-                    if (array[l] > array[l + 1]){
-                        int temp = array[l];
-                        array[l] = array[l + 1];
-                        array[l + 1] = temp;
-                    }
-                }
-            }
-            int ii = 0;
-            for (int j = 0; j < n-1; j++)
-            {
-                int flag = 0;
-                if (array[j] == array[j + 1])
-                {
-                    flag = 1;
-                }
-                if (flag == 0)
-                {
-                    ii++;
-                }
-                flag = 0;
-            }
-            ii++;
-            int[] cleared = new int[ii];
-            for (int j = 0; j < n; j++)
-            {
-                for (int l = j+1; l < n; l++)
-                {
-                    if (arrtwo[j] == arrtwo[l])
+                    for (int j = i+1; j < n; j++)
                     {
-                        arrtwo[l] = 9999999;
+                        if (array[j] == array[i])
+                        {
+                            array[j] = 9999;
+                            ii--;
+                        }
                     }
                 }
             }
-            ii = 0;
-            for (int j = 0; j < n; j++)
+            int[] cleared = new int[ii];
+            int iii = 0;
+            for (int i = 0; i < n; i++)
             {
-                if (arrtwo[j] != 9999999)
+                if (array[i] != 9999)
                 {
-                    cleared[ii] = arrtwo[j];
-                    ii++;
+                    cleared[iii] = array[i];
+                    iii++;
                 }
             }
             return cleared;
