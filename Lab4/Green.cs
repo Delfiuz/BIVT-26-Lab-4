@@ -146,25 +146,24 @@ namespace Lab4
             }
             int flag1 = 0;
             int flag2 = 0;
-            for (int i = 0; i < n; i++)
+            if (minmin != 0)
             {
-                if (array[i] == maxx && flag1 == 0)
+                for (int i = 0; i < n; i++)
                 {
-                    array[i] = minmin;
-                    flag1 = 1;
-                }
-                else
-                {
-                    if (array[i] == minmin && flag2 == 0)
+                    if (array[i] == maxx && flag1 == 0)
                     {
-                        array[i] = maxx;
-                        flag2 = 1;
+                        array[i] = minmin;
+                        flag1 = 1;
+                    }
+                    else
+                    {
+                        if (array[i] == minmin && flag2 == 0)
+                        {
+                            array[i] = maxx;
+                            flag2 = 1;
+                        }
                     }
                 }
-            }
-            if (minmin == 0)
-            {
-                return 0;
             }
         }
 
