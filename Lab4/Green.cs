@@ -138,7 +138,7 @@ namespace Lab4
             int minmin = 0;
             for (int i = 0; i < n; i++)
             {
-                if (array[i] <= 0)
+                if (array[i] < 0)
                 {
                     minmin = array[i];
                     break;
@@ -161,6 +161,10 @@ namespace Lab4
                         flag2 = 1;
                     }
                 }
+            }
+            if (minmin == 0)
+            {
+                return 0;
             }
         }
 
