@@ -253,10 +253,10 @@ namespace Lab4
 
         public int Task8(int[] array)
         {
-            int length = 0;
+            int length = 1;
             int n = array.Length;
             int k = 1;
-            int kk = 0;
+            int kk = 1;
             for (int i = 0; i < n-1; i++)
             {
                 if (array[i] > array[i+1])
@@ -345,6 +345,15 @@ namespace Lab4
             double summ = 0;
             int k = 0;
             int n1 = 0;
+            if (a == b)
+            {
+                return null;
+            }
+            if (a > b)
+            {
+                double[] B1 = { };
+                return B1;
+            }
             for (int i = 0; i < n; i++)
             {
                 A[i] = a + (b - a) / (n-1) * i;
@@ -360,10 +369,6 @@ namespace Lab4
                 {
                     k++;
                 }
-            }
-            if (a == b)
-            {
-                return null;
             }
             double[] B = new double[k];
             int ii = 0;
