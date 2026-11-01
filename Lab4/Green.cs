@@ -349,7 +349,7 @@ namespace Lab4
             {
                 return null;
             }
-            if (n < 3)
+            if (n < 2)
             {
                 return null;
             }
