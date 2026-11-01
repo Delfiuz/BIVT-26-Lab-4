@@ -355,8 +355,9 @@ namespace Lab4
             }
             if (a > b)
             {
-                double[] B1 = { };
-                return B1;
+                double temp = a;
+                a = b;
+                b = temp;
             }
             for (int i = 0; i < n; i++)
             {
