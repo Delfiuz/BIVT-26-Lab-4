@@ -375,11 +375,6 @@ namespace Lab4
                     k++;
                 }
             }
-            if (k == 0)
-            {
-                double[] B2 = { b };
-                return B2;
-            }
             double[] B = new double[k];
             int ii = 0;
             for (int i = 0; i < n; i++)
