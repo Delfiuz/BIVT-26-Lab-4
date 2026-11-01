@@ -349,6 +349,10 @@ namespace Lab4
             {
                 return null;
             }
+            if (n < 3)
+            {
+                return null;
+            }
             if (a > b)
             {
                 double[] B1 = { };
