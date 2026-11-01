@@ -241,11 +241,11 @@ namespace Lab4
             int sum = 0;
             for (int i = 0; i < n; i++)
             {
-                sum += array[i];
                 if (array[i] == maxx)
                 {
                     array[i] = sum;
                 }
+                sum += array[i];
             }
         }
 
@@ -271,7 +271,6 @@ namespace Lab4
                     }
                     k = 1;
                 }
-                i++;
             }
             length = kk;
             return length;
