@@ -369,7 +369,7 @@ namespace Lab4
             }
             for (int i = 0; i < n; i++)
             {
-                if (A[i] > summ / n1)
+                if (A[i] >= summ / n1)
                 {
                     k++;
                 }
@@ -378,7 +378,7 @@ namespace Lab4
             int ii = 0;
             for (int i = 0; i < n; i++)
             {
-                if (A[i] > summ / n1)
+                if (A[i] >= summ / n1)
                 {
                     B[ii] = A[i];
                     ii++;
